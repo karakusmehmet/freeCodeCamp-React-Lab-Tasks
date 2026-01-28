@@ -1,9 +1,11 @@
-import './App.css'
+import { OTPGenerator } from "./OTPGenerator"
 
 function App() {
 
   return (
-    <div></div>
+    <div>
+      <OTPGenerator/>
+    </div>
   )
 }
 
