@@ -1,0 +1,39 @@
+.container {
+    border: 5px solid black;
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    margin:  0 auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+input,select,button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid gray;
+}
+
+button {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: aquamarine;
+}
+
+h1 {
+    color: white;
+    background-color: rgb(61, 61, 199);
+    padding: 30px;
+}
+
+.input-area {
+    margin-top: 140px;
+}
