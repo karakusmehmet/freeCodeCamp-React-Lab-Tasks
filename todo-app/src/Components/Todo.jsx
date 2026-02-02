@@ -3,9 +3,13 @@ import { IoIosRemoveCircle } from "react-icons/io";
 import { FaEdit } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 import '../CSS/App.css'
+import { useDispatch} from 'react-redux';
 
-const Todo = ({id,content,deleteTodo,updateTodo}) => {
+import {deleteTodo, updateTodo} from '../redux/todoSlice.jsx'
 
+const Todo = ({id,content}) => {
+
+  const dispatch = useDispatch();
   const [editable, setEditable] = useState(false)
   const [newTodo, setNewTodo] = useState(content);
 
@@ -14,8 +18,7 @@ const Todo = ({id,content,deleteTodo,updateTodo}) => {
       id,
       content: newTodo,
     }
-
-    updateTodo(requested)
+    dispatch(updateTodo(requested));
     setEditable(false);
   }
   
@@ -33,7 +36,7 @@ const Todo = ({id,content,deleteTodo,updateTodo}) => {
         </div>
         <div>
             
-          <IoIosRemoveCircle className='todo-icons' onClick={() => deleteTodo(id) }/>
+          <IoIosRemoveCircle className='todo-icons' onClick={() => dispatch(deleteTodo(id)) }/>
             {
               editable ? <FaCheck className='todo-icons' onClick={handleUptade} /> 
               : <FaEdit className='todo-icons' onClick={() => setEditable(true)} />
