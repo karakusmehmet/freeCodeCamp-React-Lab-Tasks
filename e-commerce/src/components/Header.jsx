@@ -3,8 +3,10 @@ import '../css/Header.css'
 import { CiShoppingBasket } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import { FaMoon } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 const Header = () => {
     const [theme,setTheme] = useState(false)
+    const navigate = useNavigate();
     const changeTheme = () => {
         const root = document.getElementById("root");
         setTheme(prev => {
@@ -16,7 +18,7 @@ const Header = () => {
     }
   return (
     <div style={{display:"flex",alignItems:"center", justifyContent:"space-between"}}>
-       <div className='flex-row'>
+       <div className='flex-row' onClick={() => navigate("/") }>
             <img className='logo' src="./src/images/chat.png" alt="chatlogo" />
             <p className='logo-text'>MEMO A.Ş</p>
        </div>

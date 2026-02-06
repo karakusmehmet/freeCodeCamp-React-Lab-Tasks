@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+span::selection {
+    background: transparent;
+}
+
 #root {
     height: 100vh;
 }
